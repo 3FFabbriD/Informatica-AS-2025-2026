@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (){
+
+ int a[5]; 
+
+ for (int i=0; i<5; i++){
+ printf("inserisci il valore nell'array");   
+ scanf("%d", &a[i]); 
+ }
+
+
+  for (int i=0; i<5; i++){
+ printf("%d", a[i]); 
+ }
+ return 0; 
+}
