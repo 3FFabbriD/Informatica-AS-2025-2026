@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std; 
-
+ 
 int matrice [100][100];
 
 int riga,colonna; 
