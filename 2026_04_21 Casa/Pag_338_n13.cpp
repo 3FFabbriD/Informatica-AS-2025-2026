@@ -1,41 +1,51 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-int n; 
-string ricerca_esame; 
-bool trovato = false;
+struct Esame {
+    string nome_esame;
+    float voto;
+};
 
-struct Esame{
-    string nome_esame; 
-    float voto; 
-}; 
+int main() {
+    int n;
+    string ricerca_esame;
+    bool trovato = false;
 
-int main(){
+    cout << "Inserisci il numero massimo di esami: ";
+    cin >> n;
 
-    cout<<"inserisci il numero massimo di esami da inserire";
-    cin>>n; 
-
-    if (n>30){
-        cout<<"il numero inserito non è valido"; 
+    if (n > 30) {
+        cout << "Numero non valido";
+        return 0;
     }
 
-    else{
-        
+    Esame Tabella[30];
 
-        Esame Tabella[30]; 
+    // inserimento
+    for (int i = 0; i < n; i++) {
+        cout << "Nome esame: ";
+        cin >> Tabella[i].nome_esame;
 
-        for (int i = 0; i < 30 ; i++){
-            cout<<"inserisci il nome dell'esame"; 
-            cin>> Esame[i].nome_esame;
-            cout<<"inserisci il voto"; 
-            cin>> Esame[i].voto;
+        cout << "Voto: ";
+        cin >> Tabella[i].voto;
+    }
 
+    // ricerca
+    cout << "Inserisci esame da cercare: ";
+    cin >> ricerca_esame;
+
+    for (int i = 0; i < n; i++) {
+        if (Tabella[i].nome_esame == ricerca_esame) {
+            cout << "Voto: " << Tabella[i].voto;
+            trovato = true;
+            break;
         }
-
-        cout<<"inserisci il nome dell'esame da cercare"; 
-        cin>>ricerca_esame; 
-
-
     }
-    
+
+    if (!trovato) {
+        cout << "Esame non trovato";
+    }
+
+    return 0;
 }
