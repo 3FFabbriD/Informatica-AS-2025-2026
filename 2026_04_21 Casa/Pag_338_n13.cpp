@@ -22,7 +22,7 @@ int main() {
 
     Esame Tabella[30];
 
-    // inserimento
+    
     for (int i = 0; i < n; i++) {
         cout << "Nome esame: ";
         cin >> Tabella[i].nome_esame;
@@ -31,7 +31,7 @@ int main() {
         cin >> Tabella[i].voto;
     }
 
-    // ricerca
+    
     cout << "Inserisci esame da cercare: ";
     cin >> ricerca_esame;
 
